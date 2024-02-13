@@ -2,7 +2,7 @@ version: '3.9'
 services:
   job_offer:
     container_name: 'job_offer'
-    build: ./job_offer
+    build: ./backend/job_offer
     ports:
       - "7000:7000"
     depends_on:
@@ -44,10 +44,21 @@ services:
       - pgadmin-data:/var/lib/pgadmin
     networks:
       - job_offer_network
+  react-app:
+    restart: always
+    depends_on:
+      - job_offer
+    container_name: 'react-app'
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "8787:8787"
 
 volumes:
   dbstore:
   pgadmin-data:
+
 
 networks:
   job_offer_network:

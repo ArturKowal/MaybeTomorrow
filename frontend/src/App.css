@@ -1,42 +1,161 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.App {
+    text-align: center;
+    border: 5px solid limegreen;
   }
-  to {
-    transform: rotate(360deg);
+
+.center {
+    text-align: center;
   }
+
+.fontSizeLarger {
+  font-size: larger;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.fontSizeSmaller {
+  font-size: smaller;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+  #header {
+    position: relative;
+    min-height: 150px;
   }
+  
+  #header-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  #header, #header * {
+    background: rgba(40, 40, 100, 0.25);
+  }
+
+ .header {
+    position: relative;
+    min-height: 150px;
+  }
+  
+.header-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+ .header, #header * {
+    background: rgba(40, 40, 100, 0.25);
+  }
+
+  .granicay {
+    border: 5px solid rgb(255, 242, 0);
+  }
+
+  .granicab {
+    border: 5px solid rgb(38, 83, 245);
+  }
+
+  .granicaz {
+    border: 5px solid rgb(8, 226, 8);
+  }
+
+  .rel {
+    position: relative;
+    max-width: 60%;
+  }
+
+  .abs {
+    position: absolute;
+  }
+
+.footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height: 35px;
+  }
+
+.offerCard { 
+  min-width: 230;
+  max-width: 230; 
+  background-color: #D9EDBF; 
 }
 
-.card {
-  padding: 2em;
+.addOdderButton {
+  width: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+.error {
+  color: #db4437;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 12px;
+  margin-top: 4px;
+}
+
+.offerTitle {
+  min-width: 70%;
+  min-height: 45px;
+}
+
+.offerSalary {
+  min-width: 30%;
+}
+
+.offerItem {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.offerItem:hover {
+  background-color: #f5f5f5;
+}
+
+.offerSeparator {
+  margin: 1px 0;
+  border: 1px solid #ddd;
+}
+
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbarOwn {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  min-height: 90px;
+  max-height: 100px;
+}
+
+.contentContainerOwn {
+  flex: 1;
+  padding-top: 120px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.footerOwn {
+  color: white;
+}
+
+.paddingLeftRight {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-light .nav-link:hover {
+  background-color: burlywood;
+}
+
+.offerMarginTop {
+  margin-top: 10px;
 }
