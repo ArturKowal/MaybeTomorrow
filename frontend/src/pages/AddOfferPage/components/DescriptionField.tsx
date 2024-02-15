@@ -5,12 +5,11 @@ interface Props {
 }
 
 const DescriptionField = ({ description }: Props) => {
-
   const handleEvent = (event: ChangeEvent<HTMLTextAreaElement>) => {
-      event.preventDefault();
-      const target = event.target as HTMLTextAreaElement;
-      description(target.value);
-    };
+    event.preventDefault();
+    const target = event.target as HTMLTextAreaElement;
+    description(target.value);
+  };
   return (
     <div className="mb-3">
       <label htmlFor="exampleFormControlTextarea2" className="form-label">
@@ -20,6 +19,7 @@ const DescriptionField = ({ description }: Props) => {
         name="jobOfferDescription"
         className="form-control"
         id="exampleFormControlTextarea2"
+        maxLength={2000}
         onChange={(event) => {
           handleEvent(event);
         }}
