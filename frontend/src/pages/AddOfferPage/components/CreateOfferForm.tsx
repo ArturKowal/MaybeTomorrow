@@ -43,12 +43,17 @@ class CreateOfferForm extends Component<{}, State> {
   render() {
     const { title, description, salary } = this.state;
 
-    const isFormValid = this.isFieldValid(title) && this.isFieldValid(description) && this.isNumberValid(salary);
+    const isFormValid =
+      this.isFieldValid(title) &&
+      this.isFieldValid(description) &&
+      this.isNumberValid(salary);
 
     return (
       <div>
         <TitleField title={this.handleTitleChange}></TitleField>
-        <DescriptionField description={this.handleDescriptionChange}></DescriptionField>
+        <DescriptionField
+          description={this.handleDescriptionChange}
+        ></DescriptionField>
         <SalaryField salary={this.handleSalaryChange}></SalaryField>
         {isFormValid && (
           <AddOfferButton

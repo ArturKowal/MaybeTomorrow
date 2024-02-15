@@ -5,12 +5,11 @@ interface Props {
 }
 
 const TitleField = ({ title }: Props) => {
-
-    const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
-        event.preventDefault();
-        const target = event.target as HTMLInputElement;
-        title(target.value);
-      };
+  const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const target = event.target as HTMLInputElement;
+    title(target.value);
+  };
 
   return (
     <div>
@@ -24,6 +23,7 @@ const TitleField = ({ title }: Props) => {
           className="form-control"
           id="exampleFormControlInput1"
           placeholder="Job title / position name"
+          maxLength={50}
           onChange={(event) => {
             handleEvent(event);
           }}
@@ -34,4 +34,3 @@ const TitleField = ({ title }: Props) => {
 };
 
 export default TitleField;
-

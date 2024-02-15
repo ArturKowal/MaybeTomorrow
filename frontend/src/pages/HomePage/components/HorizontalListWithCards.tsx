@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import ApiConnector from "../../../client/ApiConnector";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
@@ -21,7 +22,7 @@ const HorizontalListWithCards = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await api.get(`/offer/recent/4`);
+        const result = await api.get(`/offer/recent/5`);
         console.log("Data received:", result);
         if (result) {
           const offerList: OfferList = { items: result };
@@ -37,16 +38,42 @@ const HorizontalListWithCards = () => {
     }
   }, [api, isDataFetched]);
 
+  const navigate = useNavigate();
+
+  const handleClick = (offerId: string) => {
+    navigate(`/offerId/` + encodeURIComponent(offerId));
+  };
+
   return (
-    <div className="container" style={{ paddingTop: 50 }}>
+    <div>
       <strong>Recently added:</strong>
-      <div className="navbar">
+      <div className="scrolling-wrapper">
         {offerList.map((offer, i) => (
-          <div className="" key={i}>
-            <Card item={offer}/>
+          <div
+            className="card"
+            key={i}
+            onClick={() => handleClick(offer.offerId)}
+            onMouseEnter={(e) => {
+              (e.target as HTMLDivElement).style.cursor = "pointer";
+            }}
+            onMouseLeave={(e) => {
+              (e.target as HTMLDivElement).style.cursor = "auto";
+            }}
+          >
+            <Card item={offer} />
           </div>
         ))}
       </div>
+      {/* <div className="container" style={{ paddingTop: 50 }}>
+        <strong>Recently added:</strong>
+        <div className="navbar">
+          {offerList.map((offer, i) => (
+            <div className="" key={i}>
+              <Card item={offer} />
+            </div>
+          ))}
+        </div>
+      </div> */}
     </div>
   );
 };

@@ -81,12 +81,6 @@
   height: 35px;
   }
 
-.offerCard { 
-  min-width: 230;
-  max-width: 230; 
-  background-color: #D9EDBF; 
-}
-
 .addOdderButton {
   width: 100%;
 }
@@ -136,15 +130,15 @@
   max-height: 100px;
 }
 
+.navbarFooterRadious {
+  border-radius: 15px;
+}
+
 .contentContainerOwn {
   flex: 1;
   padding-top: 120px;
   overflow-y: auto;
   padding-bottom: 20px;
-}
-
-.footerOwn {
-  color: white;
 }
 
 .paddingLeftRight {
@@ -153,9 +147,66 @@
 }
 
 .navbar-light .nav-link:hover {
-  background-color: burlywood;
+  background-color: rgb(191, 180, 166);
+  border-radius: 5px;
 }
 
 .offerMarginTop {
   margin-top: 10px;
+}
+
+.navbarLogo {
+  border-radius: 60%;
+  width: 130px;
+  height: 70px;
+}
+
+.addOfferPageWidth {
+  max-width: 700px;
+}
+
+.mainSearchField {
+  min-width: 300px;
+  max-width: 600px;
+  padding: 20px;
+  padding-top: 5px;
+  margin: auto;
+}
+
+.checkOfferbutton {
+  border-end-start-radius: 70px;
+  border-top-right-radius: 70px;
+  background-color: bisque;
+  position: absolute;
+  bottom: 8%;
+}
+
+.mainPageWelcomeText { 
+  border-radius: 3%;
+  padding: 4%;
+}
+
+.offerCard { 
+  border-radius: 3%;
+  min-height: 210px;
+  min-width: 215px;
+  max-height: 210px;
+  margin-right: 3px;
+  margin-left: 3px;
+  padding: 10%;
+}
+
+.scrolling-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  display: flex;
+  padding: 1%;
+
+  .card {
+    min-height: 215;
+    min-width: 225px;
+    max-height: 215;
+    margin-right: 5px;
+    border: 2px solid rgb(189, 201, 201);
+  }
 }

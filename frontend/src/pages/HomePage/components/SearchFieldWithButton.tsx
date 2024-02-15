@@ -2,7 +2,6 @@ import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SearchFieldWithButton = () => {
-
   let [key, setKey] = useState("");
 
   const handleEvent = (event: ChangeEvent<HTMLInputElement>) => {
@@ -13,23 +12,19 @@ const SearchFieldWithButton = () => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    if (!key) {
-      key = " "
+    if (key) {
+      navigate("/offers/results/" + encodeURIComponent(key));
     }
-    navigate("/offers/results/" + encodeURIComponent(key));
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSearch();
     }
   };
 
   return (
-    <div
-      className="input-group"
-      style={{ minWidth: 300, maxWidth: 600, padding: 20 , margin: "auto"}}
-    >
+    <div className="input-group mainSearchField">
       <input
         name="search"
         type="text"
